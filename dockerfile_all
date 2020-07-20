@@ -35,5 +35,5 @@ RUN echo "****** $DSM"
 
 WORKDIR /workspace
 RUN git clone https://github.com/NVIDIA/HugeCTR.git
-RUN cd HugeCTR && git submodule update --init --recursive && mkdir -p build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/workspace/hugectr -DSM=${DSM} .. && make -j && make install
+RUN cd HugeCTR && git submodule update --init --recursive && mkdir -p build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/workspace/hugectr -DSM=${DSM} .. && make -j && make install && cp bin/* /workspace/hugectr/.
 
